@@ -7,18 +7,30 @@
     }
     .navbar {
         margin: 0;
-        border: 2px solid grey;
+        /*border: 2px solid grey;*/
         border-radius: 0;
         background-image: none;
-        background-color: #ffffaa;
+        background-color: #ff5;
     }
     .field {
-        border: 2px solid grey;
+        border: 1px solid grey;
         /*padding: 0px;*/
     }
     .left-field {
         height: 860px;
+        background-color: #aaf;
     }
+        .customer-icon{
+            position: absolute;
+            top: 200px;
+            left: 30px;
+        }
+            .customer-icon span {
+                position: absolute;
+                width: 100px;
+                top: -50px;
+                left: 80px;
+            }
     .main-field {
         height: 650px;
     }
