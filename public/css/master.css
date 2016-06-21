@@ -1,3 +1,27 @@
 #container {
     width: 100%;
+    padding: 0;
 }
+    #container > .row {
+        margin: 0px;
+    }
+    .navbar {
+        margin: 0;
+        border: 2px solid grey;
+        border-radius: 0;
+        background-image: none;
+        background-color: #ffffaa;
+    }
+    .field {
+        border: 2px solid grey;
+        /*padding: 0px;*/
+    }
+    .left-field {
+        height: 860px;
+    }
+    .main-field {
+        height: 650px;
+    }
+    .customer-field {
+        height: 210px;
+    }
