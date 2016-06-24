@@ -18,13 +18,10 @@
     }
     .left-field {
         height: 860px;
-        width: 300px;
         background-color: #aaf;
     }
         .customer-icon{
-            position: absolute;
-            top: 200px;
-            left: 30px;
+
         }
             .customer-icon span {
                 position: absolute;

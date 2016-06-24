@@ -18,18 +18,20 @@
             </nav>
             <div class="row">
                 <div class="col-xs-2 field left-field">
-                    <div class="customer-icon">
-                        <img src="https://cont.ws/icons/stickers/2/1.png" alt="" />
-                        <span>сделай мне лендос</span>
+                    <div class="customer-icon" data-bind="foreach: customers">
+                        <img src="https://cont.ws/icons/stickers/2/1.png" data-bind="click: $parent.changeCustomerConsist" alt="" />
+                        <span data-bind='text: name'></span>
                     </div>
                 </div>
                 <div class="col-xs-10">
                     <div class="row field main-field">
-
+                        <button type="button" data-bind="click: createNewCustomer" name="button">123</button>
                     </div>
                     <div class="row field customer-field">
                         <div class="tabs" data-bind="foreach: customers">
-                            <button type="button" data-bind="text: name"></button>
+                            <!-- ko if: consist == 'in-progress' -->
+                                <button type="button" data-bind="text: name"></button>
+                            <!-- /ko -->
                         </div>
                     </div>
                 </div>
