@@ -42,7 +42,7 @@
             display: inline-flex;
         }
             .tabs button {
-                background-color: greenyellow;
+                background-color: lightgrey;
                 width: 90px;
                 height: 30px;
                 border: solid 1px grey;
