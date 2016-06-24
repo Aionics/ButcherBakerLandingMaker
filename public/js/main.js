@@ -1,5 +1,10 @@
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 function Customer(name, image){
-    this.name = name;
+    this.name = dictionary.customersNames[randomInt(0, dictionary.customersNames.length-1)];
     this.image = image;
     this.consist = 'new';
 }
