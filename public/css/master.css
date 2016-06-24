@@ -13,7 +13,7 @@
         background-color: #ff5;
     }
     .field {
-        border: 1px solid grey;
+        /*border: 1px solid grey;*/
         /*padding: 0px;*/
     }
     .left-field {
@@ -46,7 +46,9 @@
                 width: 90px;
                 height: 30px;
                 border: solid 1px grey;
+                border-radius: 15px 15px 0px 0px;
             }
             .tabs button.active {
-                background-color: darkgreen;
+                background-color: white;
+                border-bottom: 0px;
             }
