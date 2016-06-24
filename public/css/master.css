@@ -35,5 +35,17 @@
         height: 650px;
     }
     .customer-field {
+        position: relative;
         height: 210px;
     }
+        .tabs {
+            position: absolute;
+            top: -31px;
+            display: inline-flex;
+        }
+            .tabs button {
+                background-color: greenyellow;
+                width: 90px;
+                height: 30px;
+                border: solid 1px grey;
+            }
