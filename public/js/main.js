@@ -7,6 +7,7 @@ function Customer(name, image){
 function viewModel() {
     var self = this;
     self.customers = ko.observableArray();
+    self.activeCustomer = ko.observableArray();
 
     self.refreshArray = function(){
         var data = self.customers().slice(0);
@@ -20,6 +21,12 @@ function viewModel() {
     }
     self.changeCustomerConsist = function() {
         this.consist = 'in-progress';
+        self.activeCustomer = this;
+        self.refreshArray();
+    }
+    self.selectActiveCustomer = function(){
+        console.log(self.activeCustomer);
+        self.activeCustomer = this;
         self.refreshArray();
     }
 };

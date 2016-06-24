@@ -30,7 +30,11 @@
                     <div class="row field customer-field">
                         <div class="tabs" data-bind="foreach: customers">
                             <!-- ko if: consist == 'in-progress' -->
-                                <button type="button" data-bind="text: name"></button>
+                                <button type="button" data-bind="
+                                text: name,
+                                click: $parent.selectActiveCustomer,
+                                css: { active: $rawData === $parent.activeCustomer }
+                                "></button>
                             <!-- /ko -->
                         </div>
                     </div>
