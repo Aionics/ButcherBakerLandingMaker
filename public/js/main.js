@@ -1,5 +1,10 @@
+function randomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+
 function Customer(name, image){
-    this.name = name;
+    this.name = dictionary.customersNames[randomInt(0, dictionary.customersNames.length-1)];
     this.image = image;
     this.consist = 'new';
 }
@@ -7,6 +12,7 @@ function Customer(name, image){
 function viewModel() {
     var self = this;
     self.customers = ko.observableArray();
+    self.activeCustomer = ko.observableArray();
 
     self.refreshArray = function(){
         var data = self.customers().slice(0);
@@ -20,6 +26,12 @@ function viewModel() {
     }
     self.changeCustomerConsist = function() {
         this.consist = 'in-progress';
+        self.activeCustomer = this;
+        self.refreshArray();
+    }
+    self.selectActiveCustomer = function(){
+        console.log(self.activeCustomer);
+        self.activeCustomer = this;
         self.refreshArray();
     }
 };
