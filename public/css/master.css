@@ -21,13 +21,14 @@
         background-color: #aaf;
     }
         .customer-icon{
-
+            position: relative;
         }
             .customer-icon span {
                 position: absolute;
                 width: 100px;
-                top: -50px;
+                top: 65px;
                 left: 80px;
+                background-color: bisque;
             }
     .main-field {
         height: 650px;
@@ -47,6 +48,7 @@
                 height: 30px;
                 border: solid 1px grey;
                 border-radius: 15px 15px 0px 0px;
+                font-size: 11px;
             }
             .tabs button.active {
                 background-color: white;

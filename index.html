@@ -17,8 +17,8 @@
               </div>
             </nav>
             <div class="row">
-                <div class="col-xs-2 field left-field">
-                    <div class="customer-icon" data-bind="foreach: customers">
+                <div class="col-xs-2 field left-field" data-bind="foreach: customers">
+                    <div class="customer-icon">
                         <img src="https://cont.ws/icons/stickers/2/1.png" data-bind="click: $parent.changeCustomerConsist" alt="" />
                         <span data-bind='text: name'></span>
                     </div>
