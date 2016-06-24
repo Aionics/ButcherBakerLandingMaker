@@ -49,3 +49,6 @@
                 height: 30px;
                 border: solid 1px grey;
             }
+            .tabs button.active {
+                background-color: darkgreen;
+            }
