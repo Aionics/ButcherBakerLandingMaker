@@ -1,0 +1,72 @@
+html, body {
+	margin:0;
+    padding:0;
+    height:100%;
+}
+
+#gameScreen {
+	height:100%;
+	overflow: hidden;
+	position: relative;
+}
+#clients {
+	min-height: 100%;
+	width: 160px;
+	display: block;
+	border-right: 1px dashed darkgrey;
+	float: left;
+	position: relative;
+}
+.client {
+	width: 100%;
+	margin-top: 10px;
+	position: relative;
+}
+.client, .client * { transition: all 0.5s ease-in-out; }
+.client img { margin: 0 10%; width: 80%; }
+.client .order {
+	padding: 3px 7px;
+    border: 1px solid black;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+.client div.decision {
+	width: 100%;
+	height: 25px;
+	bottom: 0;
+	opacity: 0;
+}
+.client:hover div.decision {
+	opacity: 1;
+}
+.client div.decision button {
+	height: 100%;
+    padding: 0;
+    margin: 0;
+    width: 48%;
+    border-radius: 9px;
+    text-shadow: 0 0 2px darkgrey;
+    background-color: white;
+    text-align: center;
+}
+.client div.decision .answarYeah {  }
+
+#customer-field {
+	border-top: 1px dashed darkgrey;
+	display: block;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	height: 200px;
+}
+
+#customer-field .ctab {
+	margin: 0;
+	display: block;
+	width: 170px;
+	font-size: 16px;
+	line-height: 24px;
+	height: 100%;
+	text-align: center;
+	border: 1px solid darkmagenta;
+}
