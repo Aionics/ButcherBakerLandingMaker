@@ -19,7 +19,7 @@
             <div class="row">
                 <div class="col-xs-2 field left-field" data-bind="foreach: customers">
                     <div class="customer-icon" data-bind="css: {active: $rawData === $parent.activeCustomer}">
-                        <img src="https://cont.ws/icons/stickers/2/1.png" data-bind="click: $parent.changeCustomerConsist" alt="" />
+                        <img src="https://cont.ws/icons/stickers/2/1.png" data-bind="click: $parent.selectCustomer" alt="" />
                         <span data-bind='text: name'></span>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                             <!-- ko if: consist == 'in-progress' -->
                                 <button type="button" data-bind="
                                 text: name,
-                                click: $parent.selectActiveCustomer,
+                                click: $parent.selectCustomer,
                                 css: { active: $rawData === $parent.activeCustomer }
                                 "></button>
                             <!-- /ko -->
