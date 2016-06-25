@@ -36,10 +36,11 @@
     .customer-field {
         position: relative;
         height: 210px;
+        background-color: aliceblue;
     }
         .tabs {
             position: absolute;
-            top: -31px;
+            top: -29px;
             display: inline-flex;
         }
             .tabs button {
@@ -51,6 +52,7 @@
                 font-size: 11px;
             }
             .tabs button.active {
-                background-color: white;
+                background-color: aliceblue;
                 border-bottom: 0px;
+                background-color: aliceblue;
             }

@@ -30,7 +30,6 @@ function viewModel() {
         self.refreshArray();
     }
     self.selectActiveCustomer = function(){
-        console.log(self.activeCustomer);
         self.activeCustomer = this;
         self.refreshArray();
     }
