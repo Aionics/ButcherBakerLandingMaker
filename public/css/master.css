@@ -23,6 +23,9 @@
         .customer-icon{
             position: relative;
         }
+        .customer-icon.active{
+            border: dotted 2px palegreen;
+        }
             .customer-icon span {
                 position: absolute;
                 width: 100px;
