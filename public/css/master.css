@@ -9,8 +9,8 @@
         margin: 0;
         /*border: 2px solid grey;*/
         border-radius: 0;
-        background-image: none;
-        background-color: #ff5;
+        background-color: grey;
+        min-height: 20px;
     }
     .field {
         border: 1px solid grey;
