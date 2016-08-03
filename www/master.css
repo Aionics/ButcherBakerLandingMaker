@@ -62,3 +62,6 @@
         .progress {
             margin-top: 30px;
         }
+        .progress-bar {
+            transition: none;
+        }
