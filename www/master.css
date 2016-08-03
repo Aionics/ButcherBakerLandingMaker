@@ -1,10 +1,21 @@
+body {
+    width: 98.6vw;
+    height: 98.6vh;
+}
+
 #container {
+    height: 100%;
     width: 100%;
     padding: 0;
+    margin: 0;
 }
     #container > .row {
+        height: 100%;
         margin: 0px;
     }
+        #container  > .row > .col-xs-10 {
+            padding: 0;
+        }
     .navbar {
         margin: 0;
         /*border: 2px solid grey;*/
@@ -17,7 +28,7 @@
         /*padding: 0px;*/
     }
     .left-field {
-        height: 860px;
+        height: 100%;
         background-color: #aaf;
     }
         .customer-icon{
@@ -34,7 +45,7 @@
                 background-color: bisque;
             }
     .main-field {
-        height: 650px;
+        /*height: 650px;*/
     }
     .customer-field {
         position: relative;
