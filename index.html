@@ -17,32 +17,16 @@
                     </div>
                 </div>
                 <div class="col-xs-10">
-                    <nav class="navbar navbar-default">
-                      <div class="container-fluid">
-                        <div class="navbar-header">
-                            <span>nav</span>
-                            <button type="button" data-bind="click: createNewCustomer" name="button">createcustomer</button>
-                        </div>
-                      </div>
-                    </nav>
-                    <div class="row field main-field">
-                        
+
+                    <div class="statistics">
+                        <span>nav</span>
+                        <button type="button" data-bind="click: createNewCustomer" name="button">createcustomer</button>
                     </div>
-                    <div class="row field customer-field">
-                        <div class="tabs" data-bind="foreach: customers">
-                            <!-- ko if: state() == 'in-progress' -->
-                                <button type="button" data-bind="
-                                    text: name,
-                                    click: $parent.selectCustomer,
-                                    css: { active: $rawData == LM.activeCustomer() }
-                                "></button>
-                            <!-- /ko -->
+
+                    <div class="main-field">
+                        <div class="muse">
+                            
                         </div>
-                        <!-- ko if: LM.activeCustomer() -->
-                        <div class="progress">
-                            <div class="progress-bar progress-bar-danger" role="progressbar" data-bind="style: {width: LM.activeCustomer().deadline() + '%'}"></div>
-                        </div>
-                        <!-- /ko -->
                     </div>
                 </div>
             </div>
