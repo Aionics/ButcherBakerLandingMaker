@@ -25,7 +25,64 @@
 
                     <div class="main-field">
                         <div class="muse">
-                            
+                            <div class="header muse-border">
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <div class="mu_icon"></div>
+                                        <span>Adobe Muse 0.01 Alpha</span>
+                                    </div>
+                                    <div class="col-xs-8 text-right">
+                                        <div class="buttons">
+                                            <div class="min muse-border">_</div>
+                                            <div class="cross muse-border">X</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row window_content">
+                                <div class="col-xs-9 muse-border workspace-wrapper">
+                                    <div class="workspace">
+                                        <div class="tabs" data-bind="foreach: customers">
+                                            <!-- ko if: state() === 'in-progress' -->
+                                            <div class="tab">
+                                                <button class="muse-border" data-bind="
+                                                text: name,
+                                                css: {active: $rawData === LM.activeCustomer()},
+                                                click: LM.selectCustomer
+                                                ">
+                                                </button>
+                                                <div class="progress">
+                                                    <div class="progress-bar" data-bind="style: {width: deadline() + '%'}"></div>
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                        <div class="landing-wrapper">
+                                            <!-- ko if: LM.activeCustomer() -->
+                                            <div class="landing" data-bind="foreach: LM.activeCustomer().landing">
+                                                <div class="landing_cell">
+
+                                                </div>
+                                            </div>
+                                            <!-- /ko -->
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-xs-3 toolbar">
+                                    <div class="tools muse-border">
+                                        <button class="tool muse-border" type="button" name="button"></button>
+                                        <button class="tool muse-border" type="button" name="button"></button>
+                                        <button class="tool muse-border" type="button" name="button"></button>
+                                        <button class="tool muse-border" type="button" name="button"></button>
+                                        <button class="tool muse-border" type="button" name="button"></button>
+                                        <button class="tool muse-border" type="button" name="button"></button>
+                                        <button class="tool muse-border" type="button" name="button"></button>
+                                    </div>
+                                    <div class="wishes muse-border">
+
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -36,6 +93,7 @@
         <script src="www/lib/knockout-3.4.0.js" charset="utf-8"></script>
         <script src="www/js/dictionary.js" charset="utf-8"></script>
         <script src="www/js/customer.js" charset="utf-8"></script>
+        <script src="www/js/landing_cell.js" charset="utf-8"></script>
         <script src="www/index.js" charset="utf-8"></script>
     </body>
 </html>
