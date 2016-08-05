@@ -162,6 +162,7 @@ body {
                         height: 20%;
                         width: 100%;
                         background-color: white;
+                        padding: 5px;
                     }
 
                 .muse .window_content .toolbar {
@@ -175,11 +176,16 @@ body {
                         padding: 10px 20px;
                     }
                         .tools .tool {
-                            width: 30px;
-                            height: 30px;
+                            width: 32px;
+                            height: 32px;
                             background-color: #484848;
                             margin: 6px;
                             outline: none;
+                            background-repeat: no-repeat;
+                            background-position: center;
+                        }
+                        .tools .tool.selected {
+                            background-color: beige;
                         }
 
                     .window_content .toolbar .wishes {
@@ -187,3 +193,14 @@ body {
                         width: 100%;
                         padding: 10px 20px;
                     }
+
+
+/* gaming */
+
+.copyWright {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    border: solid grey 2px;
+    border-radius: 4px;
+}
