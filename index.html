@@ -68,12 +68,17 @@
                                     </div>
                                 </div>
                                 <div class="col-xs-3 toolbar">
-                                    <div class="tools muse-border" data-bind="foreach: tools">
+                                    <div class="tools muse-border">
+                                        <!-- ko if: LM.isInGame() -->
+                                        <div id="in-game"></div>
+                                        <!-- /ko -->
+                                        <!-- ko foreach: tools -->
                                         <button class="tool muse-border" type="button" name="button" data-bind="
                                             style: {'background-image': 'url('+image+')'},
                                             click: LM.selectTool,
                                             css: {selected: $rawData === LM.selectedTool()}
                                         "></button>
+                                        <!-- /ko -->
                                     </div>
                                     <div class="wishes muse-border">
 

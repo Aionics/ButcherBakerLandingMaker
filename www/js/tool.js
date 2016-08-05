@@ -18,6 +18,7 @@ function initTools() {
         avalibleAt: 1,
     });
     tool.game = function(cell, event) {
+        console.log(event);
         var text = dictionary.copyWright;
         var target = event.target;
         var id = guid();
@@ -60,6 +61,7 @@ function initTools() {
                         })
                     }
                 })
+                LM.isInGame(false);
                 return true;
             } else {
                 setTimeout(typing, 100);

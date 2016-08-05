@@ -18,6 +18,7 @@ function LM() {
     self.landingSize = ko.observable(2);
     self.tools = ko.observableArray()
     self.selectedTool = ko.observable('none');
+    self.isInGame = ko.observable(false);
 
 
     self.createNewCustomer = function() {
@@ -38,6 +39,7 @@ function LM() {
     }
     self.startGame = function(cell, event) {
         if (LM.selectedTool() != 'none') {
+            LM.isInGame(true);
             LM.selectedTool().game(cell, event);
             LM.selectedTool('none');
         }
