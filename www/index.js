@@ -44,6 +44,35 @@ function LM() {
             LM.selectedTool('none');
         }
     }
+    self.calculateSatisfy = function() {
+        var satisfy = 0;
+        var toolsUsed = [];
+        LM.activeCustomer().landing().forEach(function(cell) {
+            cell.applied().forEach(function(tool) {
+                // if(toolsUsed.indexOf(tool) === -1){
+                toolsUsed.push(tool);
+                // }
+            })
+        })
+
+        LM.activeCustomer().wishes.forEach(function(wish) {
+            var val = 0;
+            var _tool = 'none';
+
+            toolsUsed.forEach(function(tool) {
+                if(wish.satisfy[tool]) {
+                    if( val < wish.satisfy[tool] ) {
+                        val = wish.satisfy[tool];
+                        _tool = tool;
+                    }
+                }
+            })
+
+            toolsUsed.splice(toolsUsed.indexOf(_tool), 1);
+            satisfy += val;
+        })
+        LM.activeCustomer().satisfy(satisfy);
+    }
 
 };
 var LM = new LM();

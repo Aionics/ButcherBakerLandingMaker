@@ -10,7 +10,13 @@ function Tool(initObj) {
 
 }
 
+function saveGame() {
+
+}
+
 function initTools() {
+
+
     var tool = new Tool({
         name: 'copyWright',
         displayName: 'Копирайт',
@@ -45,7 +51,7 @@ function initTools() {
         });
 
         var typing = function() {
-            if ($(textarea).val().length > 400) {
+            if ($(textarea).val().length > 20) {
                 $(textarea).prop("disabled", true);
 
                 $(textarea).append($(textarea).val());
@@ -55,7 +61,7 @@ function initTools() {
                         var landing = customer.landing();
                         landing.forEach(function(landing_cell, i, landing) {
                             if (landing_cell === cell) {
-                                landing[i].type('copyWright');
+                                landing[i].applied.push('copyWright');
                                 landing[i].DOM($(target)[0].innerHTML);
                             }
                         })

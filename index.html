@@ -21,6 +21,10 @@
                     <div class="statistics">
                         <span>nav</span>
                         <button type="button" data-bind="click: createNewCustomer" name="button">createcustomer</button>
+                        <button type="button" data-bind="click: calculateSatisfy" name="button">calculateSatisfy</button>
+                        <!-- ko if: LM.activeCustomer() -->
+                        <span data-bind='text: LM.activeCustomer().satisfy()'></span>
+                        <!-- /ko -->
                     </div>
 
                     <div class="main-field">
