@@ -19,11 +19,30 @@ body {
         }
     .statistics {
         height: 4%;
-        background-color: #ff5;
+        background: linear-gradient(to top, #f1da36, beige);
+        border-bottom: 4px solid darkred;
     }
+        .statistics .stat > div {
+            padding-left: 28px;
+            position: absolute;
+            top: 7px;
+        }
+        .statistics .stat > div.money {
+            right: 30px;
+        }
+        .statistics .stat > div.reputation {
+            right: 130px;
+        }
+            .statistics .stat > div img {
+                height: 24px;
+                position: absolute;
+                left: 0px;
+            }
+
     .left-field {
         height: 100%;
-        background-color: #aaf;
+        background-color: darkslategrey;
+        box-shadow: inset -39px 3px 40px -42px #000;
     }
         .customer-icon{
             position: relative;
@@ -81,6 +100,7 @@ body {
                     display: inline-block;
                     margin-right: 20px;
                     line-height: 17px;
+                    color: lightgray;
                 }
                     .muse .header .buttons > div {
                         height: 20px;
@@ -159,6 +179,7 @@ body {
                         width: 100%;
                     }
                     .workspace .landing .landing_cell {
+                        min-height: 130px;
                         height: 20%;
                         width: 100%;
                         background-color: white;
@@ -194,6 +215,10 @@ body {
                         width: 100%;
                         padding: 10px 20px;
                     }
+                    .window_content .toolbar .done {
+                        background-color: #484848;
+                        color: lightgrey;
+                    }
 
 
 /* gaming */
@@ -214,3 +239,33 @@ body {
     border: solid grey 2px;
     border-radius: 4px;
 }
+
+.addImages {
+    width: 100%;
+    height: 100%;
+}
+    .addImages > div  {
+        display: inline-block;
+        height: 130px;
+        width: 33%;
+    }
+
+    .addImages .middle {
+        text-align: center;
+    }
+    .addImages .right {
+        text-align: right;
+    }
+
+    .addImages > div > div {
+        display: inline-block;
+        border: dashed 2px red;
+        height: 124px;
+        width: 204px;
+        position: relative;
+    }
+
+    .addImages img {
+        position: absolute;
+        border: 1px solid black;
+    }

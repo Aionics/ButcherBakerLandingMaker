@@ -25,6 +25,17 @@
                         <!-- ko if: LM.activeCustomer() -->
                         <span data-bind='text: LM.activeCustomer().satisfy()'></span>
                         <!-- /ko -->
+                        <div class="stat">
+                            <div class="money">
+                                <img src="data/img/money-icon-13.png" alt="">
+                                <span>123123</span>
+                            </div>
+                            <div class="reputation">
+                                <img src="data/img/money-icon-13.png" alt="">
+                                <span>100%</span>
+                            </div>
+                        </div>
+
                     </div>
 
                     <div class="main-field">
@@ -84,8 +95,10 @@
                                         "></button>
                                         <!-- /ko -->
                                     </div>
-                                    <div class="wishes muse-border">
-
+                                    <div class="wishes">
+                                        <button type="button" class="done muse-border" name="button" data-bind="
+                                            click: finish
+                                        ">готово!</button>
                                     </div>
                                 </div>
                             </div>

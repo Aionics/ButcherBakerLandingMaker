@@ -22,8 +22,8 @@ function Customer(initObj){
     self.name = initObj.name;
     self.image = initObj.image;
     self.state = ko.observable('new');
-    self.deadline = ko.observable(100);
-    self.deadlineSpeed = randomInt(1,20)/20;
+    self.deadline = ko.observable(randomInt(100,200));
+    self.deadlineState = ko.observable(randomInt(100,200));
 
     self.wishes = generateWishes();
     self.satisfy = ko.observable(0);

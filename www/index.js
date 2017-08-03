@@ -1,7 +1,7 @@
 var img_url = '';
 
 function guid() {
-    var s4 = function() {
+    var s4 = function () {
         return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
     }
     return s4() + '-' + s4() + s4();
@@ -17,11 +17,11 @@ function LM() {
     self.activeCustomer = ko.observable();
     self.landingSize = ko.observable(2);
     self.tools = ko.observableArray()
-    self.selectedTool = ko.observable('none');
+    self.selectedTool = ko.observable(null);
     self.isInGame = ko.observable(false);
 
 
-    self.createNewCustomer = function() {
+    self.createNewCustomer = function () {
         var name = dictionary.customersNames[randomInt(0, dictionary.customersNames.length - 1)];
         var image = img_url;
         var newCustomer = new Customer({
@@ -30,38 +30,40 @@ function LM() {
         });
         LM.customers.push(newCustomer);
     }
-    self.selectCustomer = function() {
-        this.state('in-progress');
-        LM.activeCustomer(this);
-    }
-    self.selectTool = function() {
-        LM.selectedTool(this);
-    }
-    self.startGame = function(cell, event) {
-        if (LM.selectedTool() != 'none') {
-            LM.isInGame(true);
-            LM.selectedTool().game(cell, event);
-            LM.selectedTool('none');
+    self.selectCustomer = function () {
+        if (LM.selectedTool() == null && LM.isInGame() == false) {
+            this.state('in-progress');
+            LM.activeCustomer(this);
         }
     }
-    self.calculateSatisfy = function() {
+    self.selectTool = function () {
+        LM.selectedTool(this);
+    }
+    self.startGame = function (cell, event) {
+        if (LM.selectedTool() != null) {
+            LM.isInGame(true);
+            LM.selectedTool().game(cell, event);
+            LM.selectedTool(null);
+        }
+    }
+    self.calculateSatisfy = function () {
         var satisfy = 0;
         var toolsUsed = [];
-        LM.activeCustomer().landing().forEach(function(cell) {
-            cell.applied().forEach(function(tool) {
+        LM.activeCustomer().landing().forEach(function (cell) {
+            cell.applied().forEach(function (tool) {
                 // if(toolsUsed.indexOf(tool) === -1){
                 toolsUsed.push(tool);
                 // }
             })
         })
 
-        LM.activeCustomer().wishes.forEach(function(wish) {
+        LM.activeCustomer().wishes.forEach(function (wish) {
             var val = 0;
-            var _tool = 'none';
+            var _tool = null;
 
-            toolsUsed.forEach(function(tool) {
-                if(wish.satisfy[tool]) {
-                    if( val < wish.satisfy[tool] ) {
+            toolsUsed.forEach(function (tool) {
+                if (wish.satisfy[tool]) {
+                    if (val < wish.satisfy[tool]) {
                         val = wish.satisfy[tool];
                         _tool = tool;
                     }
@@ -80,9 +82,9 @@ ko.applyBindings(LM);
 
 
 function deadlineCounter() {
-    LM.customers().forEach(function(customer) {
+    LM.customers().forEach(function (customer) {
         if (customer.deadline() > 0 && customer.state() === 'in-progress') {
-            customer.deadline(customer.deadline() - customer.deadlineSpeed);
+            customer.deadline(customer.deadline() - 1);
         }
     });
 }
